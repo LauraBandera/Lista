@@ -4,20 +4,24 @@ import java.util.Random;
 
 public class Ej23Arrays {
 
-    ArrayList<Integer> lista = new ArrayList<>();
-
+    //Mejor inicializar en el constructor
+    private ArrayList<Integer> lista;
     Random aleatorio = new Random();
 
     public Ej23Arrays(int elementos) {
+        this.lista = new ArrayList<>();
         for (int i = 0; i < elementos; i++) {
             lista.add(aleatorio.nextInt(99) + 10);
         }
     }
 
     public void imprimirLista(ArrayList<Integer> lista) {
+        lista.forEach(System.out::println);
+        /*
         for (Integer elemento : lista) {
             System.out.println(elemento);
         }
+         */
     }
 
     public void imprimirSuma(ArrayList<Integer> lista) {
@@ -69,20 +73,26 @@ public class Ej23Arrays {
     }
 
     public void borrarElemPos(ArrayList<Integer> lista, int posicion) {
-        lista.remove(posicion);
+        if ((posicion <= 0) && (posicion < lista.size())) {
+            lista.remove(posicion);
+        }
     }
 
     public void borrarElemValor(ArrayList<Integer> lista, int valor) {
         for (int i = 0; i < lista.size(); i++) {
-            if(lista.get(i) == valor){
+            if (lista.get(i) == valor) {
                 lista.remove(i);
-                //Habría que actualizar los valores de i y el size?
+                //Habría que actualizar el valor de la i
+                //para la misma posición con el nuevo valor
+                i--;
             }
         }
     }
-    
-    public void modificarElem(ArrayList<Integer> lista, int pos, int valor){
-        lista.set(pos, valor);
+
+    public void modificarElem(ArrayList<Integer> lista, int posicion, int valor) {
+        if ((posicion <= 0) && (posicion < lista.size())) {
+            lista.set(posicion, valor);
+        }
     }
 
 }
