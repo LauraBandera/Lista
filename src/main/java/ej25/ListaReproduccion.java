@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Ej25;
+package ej25;
 
 /**
  *
  * @author laura
  */
-public class Cancion {
-    private String nombre, artista, album;
-    //private ENUM{};
+public class ListaReproduccion {
+    
 }
