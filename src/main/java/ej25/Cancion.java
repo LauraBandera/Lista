@@ -10,6 +10,21 @@ package ej25;
  * @author laura
  */
 public class Cancion {
-    private String nombre, artista, album;
-    private EstiloMusical estilo;
+    private static String nombre, artista, album;
+    private static EstiloMusical estilo;
+    
+	public static String getNombre() {
+		return nombre;
+	}
+	public static String getArtista() {
+		return artista;
+	}
+	public static String getAlbum() {
+		return album;
+	}
+	public static EstiloMusical getEstilo() {
+		return estilo;
+	}
+    
+    
 }
