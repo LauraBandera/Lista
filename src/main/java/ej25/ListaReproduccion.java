@@ -88,9 +88,10 @@ public class ListaReproduccion {
     // debe estar ordenador según el criterio por el uqe 
     // se va a buscar
     public int buscarPorNombre(Cancion c) {
-//        Comparator<Cancion> criterio = = c.getNombre());
-//        Collections.binarySearch(lista, criterio);
-        return -1;
+    	Comparator<Cancion> criterio = (c1, c2) -> c1.getNombre().compareTo(c2.getNombre());
+        int posicion = Collections.binarySearch(lista, c, criterio);
+
+        return posicion;
     }
 
 }
