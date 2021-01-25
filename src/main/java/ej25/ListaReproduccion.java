@@ -7,6 +7,7 @@ package ej25;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 /**
  *
@@ -52,11 +53,11 @@ public class ListaReproduccion {
             this.lista.remove(pos);
         }
     }
-    
+
     /*
     SI LA CLASE CANCIÓN NO TIENE IMPLEMANTADO EL METODO EQUALS
     EL METODO REMOVE NO SE GARANTIZA QUE FUNCIONE CORRECTAMENTE
-    */
+     */
     public void eliminaCancion(Cancion cancion) {
         //Mirar que la posición es correcta
         this.lista.remove(cancion);
@@ -74,15 +75,22 @@ public class ListaReproduccion {
     }
 
     public void ordenarTitulo() {
-        //Collections.sort(this.lista, Cancion.getNombre());
+        Comparator<Cancion> criterio = (c1, c2) -> c1.getNombre().compareTo(c2.getNombre());
+        Collections.sort(this.lista, criterio);
     }
 
     public void ordenarArtista() {
-        //Collections.sort(Cancion.getArtista());
+        Comparator<Cancion> criterio = (c1, c2) -> c1.getArtista().compareTo(c2.getArtista());
+        Collections.sort(this.lista, criterio);
     }
 
-    public void buscar() {
-        //Collections.binarySearch(lista, Cancion.getNombre());
+    //Para usar búsqueda binaria el array o la lista
+    // debe estar ordenador según el criterio por el uqe 
+    // se va a buscar
+    public int buscarPorNombre(Cancion c) {
+//        Comparator<Cancion> criterio = = c.getNombre());
+//        Collections.binarySearch(lista, criterio);
+        return -1;
     }
 
 }
