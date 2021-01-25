@@ -45,12 +45,14 @@ public class ListaReproduccion {
 
     public void grabarCancion(Cancion song) {
         this.lista.add(song);
+        contadorCanciones++;
     }
 
     public void eliminaCancion(int pos) {
         //Mirar que la posición es correcta
         if (pos >= 0 && pos < lista.size()) {
             this.lista.remove(pos);
+            contadorCanciones--;
         }
     }
 
@@ -61,6 +63,7 @@ public class ListaReproduccion {
     public void eliminaCancion(Cancion cancion) {
         //Mirar que la posición es correcta
         this.lista.remove(cancion);
+        contadorCanciones--;
     }
 
     public static void imprimirLista(ListaReproduccion tmp) {
