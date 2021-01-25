@@ -55,6 +55,7 @@ public class Ej24Arrays {
             if (i.equals(lista.get(contador))) {
                 return true;
             }
+            contador++;
         } while (contador > lista.size());
 
         return false;
